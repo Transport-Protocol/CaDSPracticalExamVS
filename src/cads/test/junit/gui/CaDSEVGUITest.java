@@ -1,7 +1,5 @@
 package cads.test.junit.gui;
 
-import static org.junit.Assert.*;
-
 import org.cads.ev3.gui.CaDSGripperGUIFX;
 import org.cads.ev3.gui.ICaDSGUIUpdater;
 import org.cads.ev3.rmi.ICADSRMIComsumer;
@@ -23,6 +21,9 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 	@Override
 	public void register(ICaDSGUIUpdater arg0) {
 		System.out.println("New Observer");
+		arg0.addService("Service 1");
+		arg0.addService("Service 2");
+		arg0.setChoosenService("Service 2", -1, -1);
 	}
 
 	@Override
