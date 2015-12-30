@@ -26,11 +26,6 @@ Call git clone https://github.com/Transport-Protocol/CaDSPracticalExamVS to crea
 ### Implementation hints
 In the source folder JUNIT test can be find as implementation hints.
 
-### Compare to existing solution
-For test the student can call a nameservice, consumer and provider
-#### Call nameservice
-java -cp CaDSRMIProvider.jar:leJOS_EV3_0.9.0-beta/lib/ev3/ev3classes.jar  org.cads.ev3.rmi.CaDSNameServer -h localhost -ID console-I -S true
-#### Call provider
-java -cp CaDSRMIProvider.jar:leJOS_EV3_9.0-beta/lib/ev3/ev3classes.jar  org.cads.ev3.rmi.CaDSRMIProvider -h localhost -ID console-I -S true
-#### Call consumer
-java -cp CaDSRMIProvider.jar:leJOS_EV3_0.9.0-beta/lib/ev3/ev3classes.jar    org.cads.ev3.rmi.CaDSRMIConsumer -h localhost -ID console-I -S true
+### For more information see 
+https://github.com/Transport-Protocol/CaDSPracticalExamVS/wiki
+
