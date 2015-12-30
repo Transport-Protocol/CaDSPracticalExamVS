@@ -1,4 +1,5 @@
-# VS Practical Exam 1 (c) 2015 by CaDS Haw Hamburg 
+# VS Practical Exam 1    
+(c) 2015 by CaDS Haw Hamburg 
 
 ## Info
 Includes the files to start with the VS practical exam part 1 @HAW Hamburg Powered by Cads    
