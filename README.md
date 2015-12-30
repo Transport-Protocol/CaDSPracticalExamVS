@@ -2,9 +2,9 @@
 (c) 2015 by CaDS Haw Hamburg 
 
 ## Info
-Includes the files to start with the VS practical exam part 1 @HAW Hamburg Powered by Cads    
+Includes the files to start with the VS practical exam part 1 
    
-Contact: Martin.Beche@haw-hmaburg.de   
+Contact: Martin.Beche@haw-hamburg.de   
 Visit: http://cads.informatik.haw-hamburg.de   
 
 ## Create Basic setup
