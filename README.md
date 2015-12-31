@@ -24,7 +24,7 @@ Extract leJOS_EV3_X.X.X-YYYY.tar.gz as leJOS
 Call git clone https://github.com/Transport-Protocol/CaDSPracticalExamVS to create local repo.  
 
 ### Implementation hints
-In the source folder JUNIT test can be find as implementation hints.
+In the source folder JUNIT test can be found as implementation hints.
 
 ### For more information see 
 https://github.com/Transport-Protocol/CaDSPracticalExamVS/wiki
