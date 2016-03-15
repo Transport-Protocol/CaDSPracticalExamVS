@@ -42,7 +42,7 @@ ssh root@10.0.1.1
 Note: user: root - No passwd   
    
 ####Initial Setup
-https://github.com/Transport-Protocol/CaDSPracticalExamVS
+https://github.com/Transport-Protocol/CaDSPracticalExamVS/wiki
 
 ## External Usage 
 ### Create Basic setup
