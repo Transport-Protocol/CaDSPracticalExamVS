@@ -36,14 +36,10 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 				@Override
 				public void run() {
 					try {
-	
-						CaDSGripperGUISwing frame =  new CaDSGripperGUISwing(c, c, c, c);
-					
-					
+						new CaDSGripperGUISwing(c, c, c, c);
 					} catch (Exception e) {
 						e.printStackTrace();
-					}
-					
+					}			
 				}
 		  }
 		  SwingUtilities.invokeLater(new SwingGUI(this));
