@@ -1,7 +1,11 @@
 package cads.test.junit.gui;
 
+import javax.swing.SwingUtilities;
+import javax.swing.WindowConstants;
+
 import org.cads.ev3.gui.CaDSGripperGUIFX;
 import org.cads.ev3.gui.ICaDSGUIUpdater;
+import org.cads.ev3.rmi.CaDSRMIConsumer;
 import org.cads.ev3.rmi.ICADSRMIComsumer;
 import org.cads.ev3.swing.CaDSGripperControlGUISwing;
 import org.cads.ev3.swing.CaDSGripperGUISwing;
@@ -11,12 +15,39 @@ import cadSRMIInterface.IIDLCaDSEV3RMIMoveGrapper;
 import cadSRMIInterface.IIDLCaDSEV3RMIMoveHorizontally;
 import cadSRMIInterface.IIDLCaDSEV3RMIMoveVertical;
 
-public class CaDSEVGUITest implements IIDLCaDSEV3RMIMoveGrapper, IIDLCaDSEV3RMIMoveHorizontally,
+public class CaDSEVGUISwingTest implements IIDLCaDSEV3RMIMoveGrapper, IIDLCaDSEV3RMIMoveHorizontally,
 IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
-
+	synchronized public void waithere(){
+		 try {
+				this.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+	}
 	@Test
 	public void test() {
-		CaDSGripperGUIFX.startGUI(this, this, this, this);
+
+		
+		  class SwingGUI implements Runnable {			  
+			   CaDSEVGUISwingTest c;
+			   public SwingGUI(CaDSEVGUISwingTest _c){
+				   c = _c;
+			   }
+				@Override
+				public void run() {
+					try {
+	
+						CaDSGripperGUISwing frame =  new CaDSGripperGUISwing(c, c, c, c);
+					
+					
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					
+				}
+		  }
+		  SwingUtilities.invokeLater(new SwingGUI(this));
+		  waithere();
 		//fail("Not yet implemented");
 	}
 
