@@ -27,8 +27,8 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 	@Test
 	public void test() {
 
-		
-		  class SwingGUI implements Runnable {			  
+
+		  class SwingGUI implements Runnable {
 			   CaDSEVGUISwingTest c;
 			   public SwingGUI(CaDSEVGUISwingTest _c){
 				   c = _c;
@@ -39,7 +39,7 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 						new CaDSGripperGUISwing(c, c, c, c);
 					} catch (Exception e) {
 						e.printStackTrace();
-					}			
+					}
 				}
 		  }
 		  SwingUtilities.invokeLater(new SwingGUI(this));
@@ -48,29 +48,29 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 	}
 
 	@Override
-	public void register(ICaDSGUIUpdater arg0) {
+	public void register(ICaDSGUIUpdater observer) {
 		System.out.println("New Observer");
-		arg0.addService("Service 1");
-		arg0.addService("Service 2");
-		arg0.setChoosenService("Service 2", -1, -1);
+		observer.addService("Service 1");
+		observer.addService("Service 2");
+		observer.setChoosenService("Service 2", -1, -1);
 	}
 
 	@Override
-	public void update(String arg0) {
-		// called if Combobox is updated 
-		System.out.println("Combo Box updated " + arg0);
+	public void update(String comboBoxText) {
+		// called if Combobox is updated
+		System.out.println("Combo Box updated " + comboBoxText);
 	}
 
 	@Override
-	public void moveVerticalToDegree(int arg0, int arg1) throws Exception {
-		System.out.println("Call to move vertical -  TID: " + arg0 +  " degree " + arg1);
-		
+	public void moveVerticalToDegree(int tid, int percent) throws Exception {
+		System.out.println("Call to move vertical -  TID: " + tid +  " percentage " + percent);
+
 	}
 
 	@Override
-	public void moveMoveHorizontallyToDegree(int arg0, int arg1) throws Exception {
-		System.out.println("Call to move horizontally -  TID: " + arg0 +  " degree " + arg1);
-		
+	public void moveMoveHorizontallyToDegree(int tid, int percent) throws Exception {
+		System.out.println("Call to move horizontally -  TID: " + tid +  " percentage " + percent);
+
 	}
 
 	@Override
@@ -81,7 +81,7 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 	@Override
 	public void grap(int arg0) throws Exception {
 		System.out.println("Grap....");
-		
+
 	}
 
 	@Override
