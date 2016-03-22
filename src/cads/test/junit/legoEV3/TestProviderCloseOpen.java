@@ -12,7 +12,7 @@ import org.junit.Test;
 import lejos.utility.Delay;
 
 
-public class TestProviderGrapOnOff {
+public class TestProviderCloseOpen {
 	private static CaDSEV3StudentImplementation caller = null;
 	private class TestListener implements Runnable, ICaDsEV3StatusListener, ICaDSGripperFeedBack {
 
@@ -36,9 +36,9 @@ public class TestProviderGrapOnOff {
 				while(!Thread.currentThread().isInterrupted()){
 					Delay.msDelay(500);
 					if(on)
-						caller.doGrap(); // grap
+						caller.doClose(); 
 					else
-						caller.doRelease(); // release
+						caller.doOpen();
 					on = !on;	
 				}
 			} catch (Exception e) {

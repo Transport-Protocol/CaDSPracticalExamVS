@@ -62,13 +62,13 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 	}
 
 	@Override
-	public void moveVerticalToDegree(int arg0, int arg1) throws Exception {
+	public void moveVerticalToPercent(int arg0, int arg1) throws Exception {
 		System.out.println("Call to move vertical -  TID: " + arg0 +  " degree " + arg1);
 		
 	}
 
 	@Override
-	public void moveMoveHorizontallyToDegree(int arg0, int arg1) throws Exception {
+	public void moveMoveHorizontallyToPercent(int arg0, int arg1) throws Exception {
 		System.out.println("Call to move horizontally -  TID: " + arg0 +  " degree " + arg1);
 		
 	}
@@ -79,13 +79,13 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 	}
 
 	@Override
-	public void grap(int arg0) throws Exception {
+	public void closeIT(int arg0) throws Exception {
 		System.out.println("Grap....");
 		
 	}
 
 	@Override
-	public void release(int arg0) throws Exception {
+	public void openIT(int arg0) throws Exception {
 		System.out.println("Release....");
 	}
 
