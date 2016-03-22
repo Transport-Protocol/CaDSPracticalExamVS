@@ -17,20 +17,20 @@ public class TestProviderOpenClose {
 	private class TestListener implements Runnable, ICaDsEV3StatusListener, ICaDSGripperFeedBack {
 
 		@Override
-		public synchronized void giveFeedbackByJSonTo(JSONObject arg0) {
-			System.out.println(arg0);
+		public synchronized void giveFeedbackByJSonTo(JSONObject feedback) {
+			System.out.println(feedback);
 		}
 
 		@Override
-		public synchronized void onStatusMessage(JSONObject arg0) {
-			System.out.println(arg0);
-			
+		public synchronized void onStatusMessage(JSONObject status) {
+			System.out.println(status);
+
 		}
 
 		@Override
 		public void run() {
 			// TODO Auto-generated method stub
-			try {	
+			try {
 				caller = new CaDSEV3StudentImplementation(new CaDSBase(),this,this);
 				boolean on = true;
 				while(!Thread.currentThread().isInterrupted()){
@@ -48,7 +48,7 @@ public class TestProviderOpenClose {
 			System.exit(0);
 		}
 	}
-	
+
 	@Test
 	public void test() {
 		try {
