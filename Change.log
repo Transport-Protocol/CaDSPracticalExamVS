@@ -1,0 +1,9 @@
+22.03.2016 Naming -> Student request see Issues. 3-5
+Naming:
+doGrap -> doClose
+doRelease -> doOpen
+grap(int) -> closeIT(int)
+release(int) -> openIT(int)
+grap() -> close()
+release() -> open()
+Procent -> percent
