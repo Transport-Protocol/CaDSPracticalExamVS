@@ -3,8 +3,6 @@ package cads.test.junit.gui;
 import org.cads.ev3.gui.CaDSGripperGUIFX;
 import org.cads.ev3.gui.ICaDSGUIUpdater;
 import org.cads.ev3.rmi.ICADSRMIComsumer;
-import org.cads.ev3.swing.CaDSGripperControlGUISwing;
-import org.cads.ev3.swing.CaDSGripperGUISwing;
 import org.junit.Test;
 
 import cadSRMIInterface.IIDLCaDSEV3RMIMoveGrapper;
