@@ -56,14 +56,14 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 		System.out.println("Combo Box updated " + comboBoxText);
 	}
 
-	public void moveVerticalToPercent(int arg0, int arg1) throws Exception {
-		System.out.println("Call to move vertical -  TID: " + arg0 +  " degree " + arg1);
+	public void moveVerticalToPercent(int tid, int percent) throws Exception {
+		System.out.println("Call to move vertical -  TID: " + tid +  " degree " + percent);
 		
 	}
 
 	@Override
-	public void moveMoveHorizontallyToPercent(int arg0, int arg1) throws Exception {
-		System.out.println("Call to move horizontally -  TID: " + arg0 +  " degree " + arg1);
+	public void moveMoveHorizontallyToPercent(int tid, int percent) throws Exception {
+		System.out.println("Call to move horizontally -  TID: " + tid +  " degree " + percent);
 	}
 
 	@Override
