@@ -67,18 +67,18 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 	}
 
 	@Override
-	public void stop(int arg0) throws Exception {
+	public void stop(int i) throws Exception {
 		System.out.println("Stop movement....");
 	}
 
 	@Override
-	public void closeIT(int arg0) throws Exception {
+	public void closeIT(int i) throws Exception {
 		System.out.println("Close....");
 
 	}
 
 	@Override
-	public void openIT(int arg0) throws Exception {
+	public void openIT(int i) throws Exception {
 		System.out.println("open....");
 	}
 
