@@ -58,7 +58,7 @@ public class TestProviderLeftRight {
 		try {
 			TestListener l = new TestListener();
 			(new Thread(l)).start();
-			CaDSBase.start(CaDSBase.REAL,l);
+			CaDSBase.start(CaDSBase.REAL,l,l);
 			System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();
