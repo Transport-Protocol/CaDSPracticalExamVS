@@ -1,3 +1,5 @@
 org.cads.ev3.gui
 org.cads.ev3.middeware
 org.cads.ev3.swing
+org.json.simple
+org.json.simple.parser
