@@ -12,7 +12,7 @@ import org.junit.Test;
 import lejos.utility.Delay;
 
 
-public class TestProviderCloseOpen {
+public class TestProviderOpenClose {
 	private static CaDSEV3StudentImplementation caller = null;
 	private class TestListener implements Runnable, ICaDsEV3StatusListener, ICaDSGripperFeedBack {
 
@@ -32,14 +32,14 @@ public class TestProviderCloseOpen {
 			// TODO Auto-generated method stub
 			try {
 				caller = new CaDSEV3StudentImplementation(new CaDSBase(),this,this);
-				boolean on = true;
+				boolean open = true;
 				while(!Thread.currentThread().isInterrupted()){
 					Delay.msDelay(500);
-					if(on)
-						caller.doClose(); 
+					if (open)
+						caller.doClose();
 					else
 						caller.doOpen();
-					on = !on;	
+					open = !open;
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
