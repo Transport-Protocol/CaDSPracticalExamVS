@@ -4,17 +4,17 @@ import static org.junit.Assert.*;
 
 import org.cads.ev3.middeware.CaDSBase;
 import org.cads.ev3.middeware.CaDSEV3StudentImplementation;
-import org.cads.ev3.middeware.ICaDSGripperFeedBack;
-import org.cads.ev3.middeware.ICaDsEV3StatusListener;
+import org.cads.ev3.middeware.ICaDSEV3FeedBackListener;
+import org.cads.ev3.middeware.ICaDSEV3StatusListener;
 import org.json.simple.JSONObject;
 import org.junit.Test;
 
 import lejos.utility.Delay;
 
 
-public class TestProviderCloseOpen {
+public class TestProviderOpenClose {
 	private static CaDSEV3StudentImplementation caller = null;
-	private class TestListener implements Runnable, ICaDsEV3StatusListener, ICaDSGripperFeedBack {
+	private class TestListener implements Runnable, ICaDSEV3StatusListener, ICaDSEV3FeedBackListener {
 
 		@Override
 		public synchronized void giveFeedbackByJSonTo(JSONObject feedback) {
@@ -32,13 +32,13 @@ public class TestProviderCloseOpen {
 			// TODO Auto-generated method stub
 			try {
 				caller = new CaDSEV3StudentImplementation(new CaDSBase(),this,this);
-				boolean on = true;
+				boolean on = false;
 				while(!Thread.currentThread().isInterrupted()){
 					Delay.msDelay(500);
 					if(on)
-						caller.doClose(); 
-					else
 						caller.doOpen();
+					else
+						caller.doClose(); 					
 					on = !on;	
 				}
 			} catch (Exception e) {

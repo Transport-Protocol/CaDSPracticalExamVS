@@ -2,15 +2,15 @@ package cads.test.junit.gui;
 
 import org.cads.ev3.gui.CaDSGripperGUIFX;
 import org.cads.ev3.gui.ICaDSGUIUpdater;
-import org.cads.ev3.rmi.ICADSRMIComsumer;
+import org.cads.ev3.rmi.ICaDSRMIConsumer;
 import org.junit.Test;
 
 import cadSRMIInterface.IIDLCaDSEV3RMIMoveGrapper;
-import cadSRMIInterface.IIDLCaDSEV3RMIMoveHorizontally;
+import cadSRMIInterface.IIDLCaDSEV3RMIMoveHorizontal;
 import cadSRMIInterface.IIDLCaDSEV3RMIMoveVertical;
 
-public class CaDSEVGUITest implements IIDLCaDSEV3RMIMoveGrapper, IIDLCaDSEV3RMIMoveHorizontally,
-IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
+public class CaDSEVGUITest implements IIDLCaDSEV3RMIMoveGrapper, IIDLCaDSEV3RMIMoveHorizontal,
+IIDLCaDSEV3RMIMoveVertical, ICaDSRMIConsumer {
 
 	@Test
 	public void test() {
@@ -39,8 +39,8 @@ IIDLCaDSEV3RMIMoveVertical, ICADSRMIComsumer {
 	}
 
 	@Override
-	public void moveMoveHorizontallyToPercent(int tid, int percent) throws Exception {
-		System.out.println("Call to move horizontally -  TID: " + tid +  " degree " + percent);
+	public void moveMoveHorizontalToPercent(int tid, int percent) throws Exception {
+		System.out.println("Call to move horizontal -  TID: " + tid +  " degree " + percent);
 		
 	}
 
