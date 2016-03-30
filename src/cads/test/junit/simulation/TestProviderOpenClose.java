@@ -32,14 +32,14 @@ public class TestProviderOpenClose {
 			// TODO Auto-generated method stub
 			try {
 				caller = new CaDSEV3StudentImplementation(new CaDSBase(),this,this);
-				boolean on = true;
+				boolean open = true;
 				while(!Thread.currentThread().isInterrupted()){
 					Delay.msDelay(500);
-					if(on)
-						caller.doOpen(); // grap
+					if (open)
+						caller.doClose();
 					else
-						caller.doClose(); // release
-					on = !on;	
+						caller.doOpen();
+					open = !open;
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

@@ -4,6 +4,6 @@
 	<classpathentry kind="con" path="org.lejos.ev3.ldt.LEJOS_EV3_LIBRARY_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="lib/CaDSRMIProvider.jar"/>
+	<classpathentry kind="lib" path="lib/CaDSRMIProvider.jar" sourcepath="/CaDS_EV_Middleware"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
