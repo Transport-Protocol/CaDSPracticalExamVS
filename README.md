@@ -4,7 +4,7 @@
 ## Info
 Includes the files to start with the VS practical exam part 1
 
-Contact: Martin.Beche@haw-hamburg.de
+Contact: Martin.Becke@haw-hamburg.de
 
 Visit: http://cads.informatik.haw-hamburg.de
 
