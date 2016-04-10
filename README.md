@@ -11,12 +11,12 @@ Visit: http://cads.informatik.haw-hamburg.de
 ## HAW Internal Usage
 ### VS-FAQ
 #### Linux image for raspberry pi
-- Safe linux image from SD card:
+- Backup SD card as image file:
 ```bash
 sudo dd if=/dev/disk2 of=sdcard.img bs=1m
 ```
 
-- Safe linux image on SD card (MAC):
+- Write image on SD card (MAC):
 ```bash
 diskutil unmountDisk /dev/diskn
 sudo dd of=/dev/disk2 if=sdcard.img bs=1m
@@ -60,7 +60,7 @@ Please follow the steps described here: http://sourceforge.net/p/lejos/wiki/Inst
 Call `git clone https://github.com/Transport-Protocol/CaDSPracticalExamVS` to create local repo.
 
 #### Implementation hints
-In the source folder JUNIT test can be found as implementation hints.
+Implementation hints can be found in the `src/cads/test/junit` folder.
 
 #### For more information see
 https://github.com/Transport-Protocol/CaDSPracticalExamVS/wiki
