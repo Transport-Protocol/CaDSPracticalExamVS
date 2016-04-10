@@ -13,14 +13,16 @@ Visit: http://cads.informatik.haw-hamburg.de
 #### Linux image for raspberry pi
 - Backup SD card as image file:
 ```bash
-sudo dd if=/dev/disk2 of=sdcard.img bs=1m
+sudo dd if=/dev/diskN of=sdcard.img bs=1m
 ```
+Note: N is the number of the disk to backup
 
 - Write image on SD card (MAC):
 ```bash
-diskutil unmountDisk /dev/diskn
-sudo dd of=/dev/disk2 if=sdcard.img bs=1m
+diskutil unmountDisk /dev/diskN
+sudo dd of=/dev/diskN if=sdcard.img bs=1m
 ```
+Note: N is the number of the disk to override (Warning: Current data on /dev/diskN will be lost!)
 
 - Config IP (simple)
 ```bash
