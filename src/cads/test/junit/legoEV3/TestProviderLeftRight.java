@@ -2,10 +2,10 @@ package cads.test.junit.legoEV3;
 
 import static org.junit.Assert.*;
 
-import org.cads.ev3.middeware.CaDSBase;
-import org.cads.ev3.middeware.CaDSEV3StudentImplementation;
-import org.cads.ev3.middeware.ICaDSEV3FeedBackListener;
-import org.cads.ev3.middeware.ICaDSEV3StatusListener;
+import org.cads.ev3.middleware.CaDSEV3RobotStudentImplementation;
+import org.cads.ev3.middleware.CaDSEV3RobotType;
+import org.cads.ev3.middleware.hal.ICaDSEV3RobotFeedBackListener;
+import org.cads.ev3.middleware.hal.ICaDSEV3RobotStatusListener;
 import org.json.simple.JSONObject;
 import org.junit.Test;
 
@@ -13,8 +13,9 @@ import lejos.utility.Delay;
 
 
 public class TestProviderLeftRight {
-	private static CaDSEV3StudentImplementation caller = null;
-	private class TestListener implements Runnable, ICaDSEV3StatusListener, ICaDSEV3FeedBackListener {
+	private static CaDSEV3RobotStudentImplementation caller = null;
+	
+	private class TestListener implements Runnable, ICaDSEV3RobotStatusListener, ICaDSEV3RobotFeedBackListener {
 
 		@Override
 		public synchronized void giveFeedbackByJSonTo(JSONObject feedback) {
@@ -31,7 +32,7 @@ public class TestProviderLeftRight {
 		public void run() {
 			// TODO Auto-generated method stub
 			try {
-				caller = new CaDSEV3StudentImplementation(new CaDSBase(),this,this);
+			    caller = CaDSEV3RobotStudentImplementation.createInstance(CaDSEV3RobotType.REAL, this, this);
 				boolean on = true;
 				while(!Thread.currentThread().isInterrupted()){
 
@@ -58,7 +59,6 @@ public class TestProviderLeftRight {
 		try {
 			TestListener l = new TestListener();
 			(new Thread(l)).start();
-			CaDSBase.start(CaDSBase.REAL,l,l);
 			System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();

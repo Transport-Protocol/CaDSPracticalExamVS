@@ -1,85 +1,110 @@
 package cads.test.junit.gui;
 
 import javax.swing.SwingUtilities;
-import org.cads.ev3.gui.ICaDSGUIUpdater;
-import org.cads.ev3.rmi.ICaDSRMIConsumer;
-import org.cads.ev3.swing.CaDSGripperGUISwing;
+
+import org.cads.ev3.gui.ICaDSRobotGUIUpdater;
+import org.cads.ev3.gui.swing.CaDSRobotGUISwing;
+import org.cads.ev3.rmi.consumer.ICaDSRMIConsumer;
+import org.cads.ev3.rmi.generated.cadSRMIInterface.IIDLCaDSEV3RMIMoveGripper;
+import org.cads.ev3.rmi.generated.cadSRMIInterface.IIDLCaDSEV3RMIMoveHorizontal;
+import org.cads.ev3.rmi.generated.cadSRMIInterface.IIDLCaDSEV3RMIMoveVertical;
+import org.cads.ev3.rmi.generated.cadSRMIInterface.IIDLCaDSEV3RMIUltraSonic;
 import org.junit.Test;
 
-import cadSRMIInterface.IIDLCaDSEV3RMIMoveGrapper;
-import cadSRMIInterface.IIDLCaDSEV3RMIMoveHorizontal;
-import cadSRMIInterface.IIDLCaDSEV3RMIMoveVertical;
+public class CaDSEVGUISwingTest implements IIDLCaDSEV3RMIMoveGripper, IIDLCaDSEV3RMIMoveHorizontal, IIDLCaDSEV3RMIMoveVertical, IIDLCaDSEV3RMIUltraSonic, ICaDSRMIConsumer {
+    synchronized public void waithere() {
+        try {
+            this.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
-public class CaDSEVGUISwingTest implements IIDLCaDSEV3RMIMoveGrapper, IIDLCaDSEV3RMIMoveHorizontal,
-IIDLCaDSEV3RMIMoveVertical, ICaDSRMIConsumer {
-	synchronized public void waithere(){
-		 try {
-				this.wait();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-	}
-	@Test
-	public void test() {
+    private class SwingGUI implements Runnable {
+        CaDSEVGUISwingTest c;
 
+        public SwingGUI(CaDSEVGUISwingTest _c) {
+            c = _c;
+        }
 
-		  class SwingGUI implements Runnable {
-			   CaDSEVGUISwingTest c;
-			   public SwingGUI(CaDSEVGUISwingTest _c){
-				   c = _c;
-			   }
-				@Override
-				public void run() {
-					try {
-						new CaDSGripperGUISwing(c, c, c, c);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-		  }
-		  SwingUtilities.invokeLater(new SwingGUI(this));
-		  waithere();
-		//fail("Not yet implemented");
-	}
+        @Override
+        public void run() {
+            try {
+                CaDSRobotGUISwing gui = new CaDSRobotGUISwing(c, c, c, c, c);
+                gui.addService("TestService1");
+                gui.addService("TestService2");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-	@Override
-	public void register(ICaDSGUIUpdater observer) {
-		System.out.println("New Observer");
-		observer.addService("Service 1");
-		observer.addService("Service 2");
-		observer.setChoosenService("Service 2", -1, -1);
-	}
+    @Test
+    public void test() {
+        SwingUtilities.invokeLater(new SwingGUI(this));
+        waithere();
+        // fail("Not yet implemented");
+    }
 
-	@Override
-	public void update(String comboBoxText) {
-		// called if Combobox is updated
-		System.out.println("Combo Box updated " + comboBoxText);
-	}
+    @Override
+    public void register(ICaDSRobotGUIUpdater observer) {
+        System.out.println("New Observer");
+        observer.addService("Service 1");
+        observer.addService("Service 2");
+        observer.setChoosenService("Service 2", -1, -1, false);
+    }
 
-	public void moveVerticalToPercent(int tid, int percent) throws Exception {
-		System.out.println("Call to move vertical -  TID: " + tid +  " degree " + percent);
-		
-	}
+    @Override
+    public void update(String comboBoxText) {
+        System.out.println("Combo Box updated " + comboBoxText);
+    }
 
-	@Override
-	public void moveMoveHorizontalToPercent(int tid, int percent) throws Exception {
-		System.out.println("Call to move horizontal -  TID: " + tid +  " degree " + percent);
-	}
+    public int moveVerticalToPercent(int transactionID, int percent) throws Exception {
+        System.out.println("Call to move vertical -  TID: " + transactionID + " degree " + percent);
+        return 0;
+    }
 
-	@Override
-	public void stop(int i) throws Exception {
-		System.out.println("Stop movement....");
-	}
+    @Override
+    public int getCurrentVerticalPercent() throws Exception {
+        return 0;
+    }
 
-	@Override
-	public void closeIT(int i) throws Exception {
-		System.out.println("Close....");
+    @Override
+    public int moveHorizontalToPercent(int transactionID, int percent) throws Exception {
+        System.out.println("Call to move horizontal -  TID: " + transactionID + " degree " + percent);
+        return 0;
+    }
 
-	}
+    @Override
+    public int stop(int transactionID) throws Exception {
+        System.out.println("Stop movement.... TID: " + transactionID);
+        return 0;
+    }
 
-	@Override
-	public void openIT(int i) throws Exception {
-		System.out.println("open....");
-	}
+    @Override
+    public int getCurrentHorizontalPercent() throws Exception {
+        return 0;
+    }
 
+    @Override
+    public int closeGripper(int transactionID) throws Exception {
+        System.out.println("Close.... TID: " + transactionID);
+        return 0;
+    }
+
+    @Override
+    public int openGripper(int transactionID) throws Exception {
+        System.out.println("open.... TID: " + transactionID);
+        return 0;
+    }
+
+    @Override
+    public int isGripperClosed() throws Exception {
+        return 0;
+    }
+
+    @Override
+    public int isUltraSonicOccupied() throws Exception {
+        return 0;
+    }
 }
