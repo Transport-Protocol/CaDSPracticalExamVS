@@ -8,6 +8,10 @@ Contact: Martin.Becke@haw-hamburg.de
 
 Visit: http://cads.informatik.haw-hamburg.de
 
+
+## For more lecture information see
+https://github.com/Transport-Protocol/CaDSPracticalExamVS/wiki
+
 ## HAW Internal Usage
 ### VS-FAQ
 #### Linux image for raspberry pi
