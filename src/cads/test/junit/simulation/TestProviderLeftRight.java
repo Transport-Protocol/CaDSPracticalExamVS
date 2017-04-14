@@ -2,7 +2,7 @@ package cads.test.junit.simulation;
 
 import static org.junit.Assert.*;
 
-import org.cads.ev3.middleware.CaDSEV3RobotStudentImplementation;
+import org.cads.ev3.middleware.CaDSEV3RobotHAL;
 import org.cads.ev3.middleware.CaDSEV3RobotType;
 import org.cads.ev3.middleware.hal.ICaDSEV3RobotFeedBackListener;
 import org.cads.ev3.middleware.hal.ICaDSEV3RobotStatusListener;
@@ -12,7 +12,7 @@ import org.junit.Test;
 import lejos.utility.Delay;
 
 public class TestProviderLeftRight {
-    private static CaDSEV3RobotStudentImplementation caller = null;
+    private static CaDSEV3RobotHAL caller = null;
 
     private class TestListener implements Runnable, ICaDSEV3RobotStatusListener, ICaDSEV3RobotFeedBackListener {
 
@@ -31,7 +31,7 @@ public class TestProviderLeftRight {
         public void run() {
             // TODO Auto-generated method stub
             try {
-                caller = CaDSEV3RobotStudentImplementation.createInstance(CaDSEV3RobotType.SIMULATION, this, this);
+                caller = CaDSEV3RobotHAL.createInstance(CaDSEV3RobotType.SIMULATION, this, this);
                 boolean on = true;
                 while (!Thread.currentThread().isInterrupted()) {
 

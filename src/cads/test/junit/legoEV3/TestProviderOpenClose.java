@@ -2,7 +2,7 @@ package cads.test.junit.legoEV3;
 
 import static org.junit.Assert.*;
 
-import org.cads.ev3.middleware.CaDSEV3RobotStudentImplementation;
+import org.cads.ev3.middleware.CaDSEV3RobotHAL;
 import org.cads.ev3.middleware.CaDSEV3RobotType;
 import org.cads.ev3.middleware.hal.ICaDSEV3RobotFeedBackListener;
 import org.cads.ev3.middleware.hal.ICaDSEV3RobotStatusListener;
@@ -13,7 +13,7 @@ import lejos.utility.Delay;
 
 
 public class TestProviderOpenClose {
-	private static CaDSEV3RobotStudentImplementation caller = null;
+	private static CaDSEV3RobotHAL caller = null;
 	private class TestListener implements Runnable, ICaDSEV3RobotStatusListener, ICaDSEV3RobotFeedBackListener {
 
 		@Override
@@ -31,7 +31,7 @@ public class TestProviderOpenClose {
 		public void run() {
 			// TODO Auto-generated method stub
 			try {
-				caller = CaDSEV3RobotStudentImplementation.createInstance(CaDSEV3RobotType.REAL, this, this);
+				caller = CaDSEV3RobotHAL.createInstance(CaDSEV3RobotType.REAL, this, this);
 				boolean open = true;
 				while(!Thread.currentThread().isInterrupted()){
 					Delay.msDelay(500);
