@@ -1,5 +1,5 @@
 {
-    "ObjectName": "IDLMoveAround",
+    "ServiceName": "IDLMoveAround",
     "Function": "moveAround",
     "Functions": [{
         "name": "moveAround",

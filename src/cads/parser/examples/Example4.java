@@ -31,7 +31,7 @@ public class Example4 {
 
         JSONParser parser = new JSONParser();
         JSONObject json = (JSONObject) parser.parse(jsonText);
-        String objectName = (String) json.get("ObjectName");
+        String objectName = (String) json.get("ServiceName");
         JSONArray methodes = (JSONArray) json.get("Functions");
 
         // Fill Description Arrays

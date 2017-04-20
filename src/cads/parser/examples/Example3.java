@@ -28,7 +28,7 @@ public class Example3 {
         JSONParser parser = new JSONParser();
         JSONObject json = (JSONObject) parser.parse(jsonText);
         String textToPrint = (String) json.get("text_to_print");
-        String objectName = (String) json.get("ObjectName");
+        String objectName = (String) json.get("ServiceName");
         String methodeName = (String) json.get("Function");
 
         // Read Plain Text Class
