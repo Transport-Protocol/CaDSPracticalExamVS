@@ -1,0 +1,10 @@
+package cads.parser.generated;
+
+public class Example1_Generated_File {
+
+    public static void main(String[] args) {
+        System.out.println("%s");
+
+    }
+
+}
