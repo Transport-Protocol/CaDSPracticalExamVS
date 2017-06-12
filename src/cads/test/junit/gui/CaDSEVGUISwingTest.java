@@ -1,5 +1,7 @@
 package cads.test.junit.gui;
 
+import java.util.concurrent.TimeUnit;
+
 import javax.swing.SwingUtilities;
 
 import org.cads.ev3.gui.ICaDSRobotGUIUpdater;
@@ -12,8 +14,33 @@ import org.cads.ev3.rmi.generated.cadSRMIInterface.IIDLCaDSEV3RMIUltraSonic;
 import org.junit.Test;
 
 public class CaDSEVGUISwingTest implements IIDLCaDSEV3RMIMoveGripper, IIDLCaDSEV3RMIMoveHorizontal, IIDLCaDSEV3RMIMoveVertical, IIDLCaDSEV3RMIUltraSonic, ICaDSRMIConsumer {
+    static CaDSRobotGUISwing gui;
+    
     synchronized public void waithere() {
         try {
+            
+            TimeUnit.SECONDS.sleep(5);
+            System.out.println("Added Service.");
+            gui.addService("TestService3");
+            
+            TimeUnit.SECONDS.sleep(5);
+            System.out.println("removed Service.");
+            gui.removeService("TestService3");
+            
+            TimeUnit.SECONDS.sleep(5);
+            System.out.println("Added Service.");
+            gui.addService("TestService4");
+            
+            TimeUnit.SECONDS.sleep(5);
+            System.out.println("removed Service.");
+            gui.removeService("TestService4");
+            
+            TimeUnit.SECONDS.sleep(5);
+            System.out.println("Added Service.");
+            gui.addService("TestService5");
+            
+            
+            
             this.wait();
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -30,9 +57,11 @@ public class CaDSEVGUISwingTest implements IIDLCaDSEV3RMIMoveGripper, IIDLCaDSEV
         @Override
         public void run() {
             try {
-                CaDSRobotGUISwing gui = new CaDSRobotGUISwing(c, c, c, c, c);
+                gui = new CaDSRobotGUISwing(c, c, c, c, c);
                 gui.addService("TestService1");
                 gui.addService("TestService2");
+                
+                
             } catch (Exception e) {
                 e.printStackTrace();
             }
