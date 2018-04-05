@@ -1,16 +1,4 @@
 org.cads.ev3.gui
 org.cads.ev3.gui.swing
-org.cads.ev3.logger
 org.cads.ev3.middleware
 org.cads.ev3.middleware.hal
-org.cads.ev3.real
-org.cads.ev3.rmi.consumer
-org.cads.ev3.rmi.generated.cadSRMIInterface
-org.cads.ev3.rmi.generated.cadSRMISkeleton
-org.cads.ev3.rmi.generated.cadSRMIStub
-org.cads.ev3.rmi.idlParser
-org.cads.ev3.rmi.nameServer
-org.cads.ev3.rmi.provider
-org.cads.ev3.simulation
-org.json.simple
-org.json.simple.parser
