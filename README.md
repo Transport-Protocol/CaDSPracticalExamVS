@@ -11,9 +11,9 @@ Visit: https://cads.informatik.haw-hamburg.de
 ## First Usage
 The repository mainly includes two folders.  
 
-First, the **RMI Example** to show the _minimal_ functional scope of a possible solution.  
-  
-Second, the **Example Project** is provided.
+1. **RMI Example** to show the _minimal_ functional scope of a possible solution.  
+
+2. **Example Project** is provided.
 The example project is used to display the usage of the provided applications to control and simulate a robotic arm.
 A part of the task is to auto generate sections of your code. In order to support that, an example for a code generator is provided.
 
