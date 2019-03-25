@@ -11,8 +11,8 @@ public class TestCaDSRoboticArmControlGUI implements ICaDSRoboticArmControlGUIRe
         TestCaDSRoboticArmControlGUI test = new TestCaDSRoboticArmControlGUI();
         ICaDSRoboticArmControlGUIManipulator gui = new CaDSRoboticArmControlGUI(test, test);
 
-        gui.addService("Test1");
-        gui.addService("Test2");
+        gui.addRoboticArmService("Test1");
+        gui.addRoboticArmService("Test2");
 
         gui.startGUIRefresh(1000);
         //gui.stopGUIRefresh();
@@ -30,29 +30,29 @@ public class TestCaDSRoboticArmControlGUI implements ICaDSRoboticArmControlGUIRe
 
     ////////////////////////////////////////////// Control Input provided by the Control GUI
     @Override
-    public int setNewBackForthPercentage(int transactionID, int percentage) {
-        System.out.println("Newly set value in GUI forwarded to the consumer - setNewBackForthPercentage: transactionID: " + transactionID + " , percentage: " + percentage);
+    public int setNewBackForthPercentage(int percentage) {
+        System.out.println("Newly set value in GUI forwarded to the consumer - setNewBackForthPercentage: percentage: " + percentage);
         return percentage;
     }
 
 
     @Override
-    public int setNewGripperPercentage(int transactionID, int percentage) {
-        System.out.println("Newly set value in GUI forwarded to the consumer - setNewGripperPercentage: transactionID: " + transactionID + " , percentage: " + percentage);
+    public int setNewGripperPercentage(int percentage) {
+        System.out.println("Newly set value in GUI forwarded to the consumer - setNewGripperPercentage: percentage: " + percentage);
         return percentage;
     }
 
 
     @Override
-    public int setNewLeftRightPercentage(int transactionID, int percentage) {
-        System.out.println("Newly set value in GUI forwarded to the consumer - setNewLeftRightPercentage: transactionID: " + transactionID + " , percentage: " + percentage);
+    public int setNewLeftRightPercentage(int percentage) {
+        System.out.println("Newly set value in GUI forwarded to the consumer - setNewLeftRightPercentage: percentage: " + percentage);
         return percentage;
     }
 
 
     @Override
-    public int setNewUpDownPercentage(int transactionID, int percentage) {
-        System.out.println("Newly set value in GUI forwarded to the consumer - setNewUpDownPercentage: transactionID: " + transactionID + " , percentage: " + percentage);
+    public int setNewUpDownPercentage(int percentage) {
+        System.out.println("Newly set value in GUI forwarded to the consumer - setNewUpDownPercentage: percentage: " + percentage);
         return percentage;
     }
 

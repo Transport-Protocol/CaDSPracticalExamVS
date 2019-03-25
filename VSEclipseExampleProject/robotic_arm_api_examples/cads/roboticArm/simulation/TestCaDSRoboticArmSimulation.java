@@ -26,25 +26,25 @@ public class TestCaDSRoboticArmSimulation {
             while (true){
                 System.out.println("Move everything to 100%");
                 System.out.println();
-                simulation.setLeftRightPercentageTo(191,100);
+                simulation.setLeftRightPercentageTo(100);
                 TimeUnit.SECONDS.sleep(1);
-                simulation.setUpDownPercentageTo(192,100);
+                simulation.setUpDownPercentageTo(100);
                 TimeUnit.SECONDS.sleep(1);
-                simulation.setBackForthPercentageTo(193, 100);
+                simulation.setBackForthPercentageTo(100);
                 TimeUnit.SECONDS.sleep(1);
-                simulation.setOpenClosePercentageTo(194, 100);
+                simulation.setOpenClosePercentageTo(100);
 
                 TimeUnit.SECONDS.sleep(6);
 
                 System.out.println("Move everything to 0%");
                 System.out.println();
-                simulation.setLeftRightPercentageTo(201,0);
+                simulation.setLeftRightPercentageTo(0);
                 TimeUnit.SECONDS.sleep(1);
-                simulation.setUpDownPercentageTo(202,0);
+                simulation.setUpDownPercentageTo(0);
                 TimeUnit.SECONDS.sleep(1);
-                simulation.setBackForthPercentageTo(203, 0);
+                simulation.setBackForthPercentageTo(0);
                 TimeUnit.SECONDS.sleep(1);
-                simulation.setOpenClosePercentageTo(204, 0);
+                simulation.setOpenClosePercentageTo(0);
 
                 TimeUnit.SECONDS.sleep(6);
             }
