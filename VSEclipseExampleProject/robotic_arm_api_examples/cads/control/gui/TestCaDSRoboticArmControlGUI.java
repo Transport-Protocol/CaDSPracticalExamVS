@@ -30,30 +30,26 @@ public class TestCaDSRoboticArmControlGUI implements ICaDSRoboticArmControlGUIRe
 
     ////////////////////////////////////////////// Control Input provided by the Control GUI
     @Override
-    public int setNewBackForthPercentage(int percentage) {
-        System.out.println("Newly set value in GUI forwarded to the consumer - setNewBackForthPercentage: percentage: " + percentage);
-        return percentage;
+    public void newBackForthPercentage(int percentage) {
+        System.out.println("Newly set value in GUI forwarded to the consumer - newBackForthPercentage: percentage: " + percentage);
     }
 
 
     @Override
-    public int setNewGripperPercentage(int percentage) {
-        System.out.println("Newly set value in GUI forwarded to the consumer - setNewGripperPercentage: percentage: " + percentage);
-        return percentage;
+    public void newGripperPercentage(int percentage) {
+        System.out.println("Newly set value in GUI forwarded to the consumer - newGripperPercentage: percentage: " + percentage);
     }
 
 
     @Override
-    public int setNewLeftRightPercentage(int percentage) {
-        System.out.println("Newly set value in GUI forwarded to the consumer - setNewLeftRightPercentage: percentage: " + percentage);
-        return percentage;
+    public void newLeftRightPercentage(int percentage) {
+        System.out.println("Newly set value in GUI forwarded to the consumer - newLeftRightPercentage: percentage: " + percentage);
     }
 
 
     @Override
-    public int setNewUpDownPercentage(int percentage) {
-        System.out.println("Newly set value in GUI forwarded to the consumer - setNewUpDownPercentage: percentage: " + percentage);
-        return percentage;
+    public void newUpDownPercentage(int percentage) {
+        System.out.println("Newly set value in GUI forwarded to the consumer - newUpDownPercentage: percentage: " + percentage);
     }
 
     @Override
@@ -63,26 +59,30 @@ public class TestCaDSRoboticArmControlGUI implements ICaDSRoboticArmControlGUIRe
 
     //////////////////////////////////////////////// For GUI Refresh Routine
     //////////////////////////////////////////////// Only needed if a GUI refresh is wanted
+    // The values that are provided here have to be between: [0 - 100]
     @Override
     public int getCurrentBackForthPercentage() {
+    	// The value that is returned here is shown in the GUI to display the current status of a specific dimension of the robotic arm 
         return getCurrentValueCounterAndIncrement();
     }
 
-
     @Override
     public int getCurrentGripperPercentage() {
+    	// The value that is returned here is shown in the GUI to display the current status of a specific dimension of the robotic arm 
         return getCurrentValueCounterAndIncrement();
     }
 
 
     @Override
     public int getCurrentLeftRightPercentage() {
+    	// The value that is returned here is shown in the GUI to display the current status of a specific dimension of the robotic arm 
         return getCurrentValueCounterAndIncrement();
     }
 
 
     @Override
     public int getCurrentUpDownPercentage() {
+    	// The value that is returned here is shown in the GUI to display the current status of a specific dimension of the robotic arm 
         return getCurrentValueCounterAndIncrement();
     }
 }
