@@ -20,7 +20,7 @@ public class TestCaDSRoboticArmSimulationPhilosophersOwnPlaces {
     @SuppressWarnings("static-access")
     public static void main(String[] args) {
         try {
-            CaDSRoboticArmPhilosopherSimulation sim = new CaDSRoboticArmPhilosopherSimulation(CaDSRoboticArmPhilosopherSimulationPosition.NORTH, new CaDSPhilosopherFeedbackPrint());
+            CaDSRoboticArmPhilosopherSimulation sim = new CaDSRoboticArmPhilosopherSimulation(CaDSRoboticArmPhilosopherSimulationPosition.NORTH, new TestCaDSPhilosopherFeedbackPermissionPrint());
             // Robotic Arm Control interface
             ICaDSRoboticArm simulation = sim;
             // Robotic Arm Status and Workplace action interface
